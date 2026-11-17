@@ -1,39 +1,5 @@
-
 /* =====================================
    1. VARIABLES Y CONFIGURACIÓN GENERAL
-===================================== */
-
-:root {
-    --background: #080B16;
-    --surface: #101629;
-    --card: #151D33;
-    --text: #F4F3FF;
-    --secondary: #A5ABC2;
-    --accent: #9878FF;
-    --border: #29314B;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: var(--background);
-    color: var(--text);
-    line-height: 1.6;
-}
-
-
-/* =====================================
-   2. HEADER Y NAVEGACIÓN
-===================================== */
-
-/* =====================================
-   VARIABLES GENERALES
 ===================================== */
 
 :root {
@@ -64,9 +30,13 @@ body {
     line-height: 1.6;
 }
 
+img {
+    max-width: 100%;
+}
+
 
 /* =====================================
-   HEADER
+   2. HEADER Y NAVEGACIÓN
 ===================================== */
 
 .header {
@@ -78,7 +48,7 @@ body {
     min-height: 85px;
     padding: 12px 7%;
 
-    background: #080B16;
+    background: var(--background);
     border-bottom: 1px solid var(--border);
 
     position: sticky;
@@ -109,7 +79,11 @@ body {
 }
 
 .navigation a {
-    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+
+    color: var(--text);
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
@@ -120,249 +94,6 @@ body {
 .navigation a:hover {
     color: var(--accent);
 }
-
-/* BOTÓN DE AUDIO */
-
-.mute-button {
-    justify-self: end;
-
-    width: 44px;
-    height: 44px;
-
-    border: 1px solid var(--border);
-    border-radius: 50%;
-
-    background: var(--card);
-    color: white;
-
-    font-size: 19px;
-    cursor: pointer;
-
-    transition: background 0.3s, transform 0.3s;
-}
-
-.mute-button:hover {
-    background: var(--accent-hover);
-    transform: scale(1.08);
-}
-
-
-/* =====================================
-   HERO A ANCHO COMPLETO
-===================================== */
-
-.hero {
-    position: relative;
-
-    width: 100%;
-    height: min(75vh, 800px);
-    min-height: 500px;
-
-    display: flex;
-    align-items: center;
-
-    overflow: hidden;
-    background: #080B16;
-}
-
-/* IMAGEN DE FONDO */
-
-.hero-background {
-    position: absolute;
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
-
-    z-index: 0;
-}
-
-/* CAPA OSCURA PARA MEJORAR EL CONTRASTE */
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-
-    background: linear-gradient(
-        90deg,
-        rgba(5, 7, 18, 0.92) 0%,
-        rgba(5, 7, 18, 0.65) 45%,
-        rgba(5, 7, 18, 0.10) 100%
-    );
-
-    z-index: 1;
-}
-
-/* TEXTO SUPERPUESTO */
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-
-    width: 90%;
-    max-width: 750px;
-
-    margin-left: 8%;
-    padding: 40px 0;
-}
-
-.subtitle {
-    display: inline-block;
-
-    color: #C4ABFF;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 4px;
-
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    color: #FFFFFF;
-
-    font-size: clamp(38px, 5vw, 68px);
-    line-height: 1.12;
-
-    margin-bottom: 25px;
-
-    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
-}
-
-.hero-content p {
-    color: #F0EDFF;
-
-    max-width: 580px;
-    font-size: 17px;
-    line-height: 1.8;
-
-    margin-bottom: 35px;
-
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-}
-
-/* BOTÓN PRINCIPAL */
-
-.hero-button {
-    display: inline-block;
-
-    padding: 15px 30px;
-
-    background: #9878FF;
-    color: #FFFFFF;
-
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-
-    transition: background 0.3s, transform 0.3s;
-}
-
-.hero-button:hover {
-    background: #7958DB;
-    transform: translateY(-3px);
-}
-
-/* FIRMA DE LA IMAGEN */
-
-.hero-caption {
-    position: absolute;
-    right: 7%;
-    bottom: 25px;
-
-    z-index: 2;
-
-    color: #FFFFFF;
-    font-size: 11px;
-    letter-spacing: 3px;
-
-    text-shadow: 0 2px 8px #000000;
-}
-
-
-/* =====================================
-   RESPONSIVE
-===================================== */
-
-@media (max-width: 850px) {
-
-    .header {
-        padding: 12px 4%;
-    }
-
-    .navigation {
-        gap: 20px;
-    }
-
-    .hero {
-        height: 650px;
-        min-height: 500px;
-    }
-
-    .hero-content {
-        margin-left: 6%;
-    }
-
-}
-
-@media (max-width: 550px) {
-
-    .header {
-        grid-template-columns: 1fr auto;
-        gap: 12px;
-    }
-
-    .logo img {
-        width: 115px;
-    }
-
-    .navigation {
-        grid-column: 1 / -1;
-        grid-row: 2;
-        justify-content: center;
-        gap: 25px;
-    }
-
-    .navigation a {
-        font-size: 13px;
-    }
-
-    .mute-button {
-        grid-column: 2;
-        grid-row: 1;
-    }
-
-    .hero {
-        height: 600px;
-        min-height: 500px;
-    }
-
-    .hero-background {
-        object-position: 60% center;
-    }
-
-    .hero-overlay {
-        background: rgba(5, 7, 18, 0.65);
-    }
-
-    .hero-content {
-        width: 88%;
-        margin: auto;
-        text-align: center;
-    }
-
-    .hero h1 {
-        font-size: 38px;
-    }
-
-    .hero-content p {
-        font-size: 15px;
-    }
-
-}
-
 
 
 /* =====================================
@@ -393,6 +124,8 @@ body {
 }
 
 .subtitle {
+    display: inline-block;
+
     color: var(--accent);
     font-size: 12px;
     font-weight: bold;
@@ -411,12 +144,15 @@ body {
 }
 
 .hero-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
 
     padding: 14px 28px;
 
     background: var(--accent);
-    color: white;
+    color: var(--text);
 
     border-radius: 6px;
     text-decoration: none;
@@ -426,7 +162,7 @@ body {
 }
 
 .hero-button:hover {
-    background: #7958DB;
+    background: var(--accent-hover);
     transform: translateY(-3px);
 }
 
@@ -595,7 +331,11 @@ figure figcaption {
 }
 
 .contact-gif {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+
     margin: 15px 0;
 }
 
@@ -603,6 +343,7 @@ figure figcaption {
     display: block;
     width: 250px;
     height: auto;
+
     transition: transform 0.3s;
 }
 
@@ -625,7 +366,18 @@ figure figcaption {
 
 
 /* =====================================
-   8. DISEÑO RESPONSIVE
+   8. ESTADOS DE FOCO
+===================================== */
+
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 5px;
+    border-radius: 4px;
+}
+
+
+/* =====================================
+   9. DISEÑO RESPONSIVE
 ===================================== */
 
 @media (max-width: 850px) {
@@ -633,6 +385,7 @@ figure figcaption {
     .header {
         grid-template-columns: 1fr auto;
         gap: 20px;
+        padding: 12px 4%;
     }
 
     .navigation {
@@ -692,6 +445,28 @@ figure figcaption {
 
     .video-section {
         padding: 70px 5%;
+    }
+
+    .footer-content h2 {
+        font-size: 29px;
+    }
+
+}
+
+
+/* =====================================
+   10. PREFERENCIAS DE MOVIMIENTO
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
     }
 
 }
