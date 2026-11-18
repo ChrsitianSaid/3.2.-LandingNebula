@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Nébula, artista digital especializada en paisajes de ciencia ficción y mundos imaginarios.">
     <title>NÉBULA | Digital Art</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="nebula.js" defer></script>
 </head>
@@ -56,20 +57,21 @@
     </div>
 
     <!-- Imagen principal -->
-    <figure class="gallery-featured">
-        <img id="gallery-main-image" src="assets/img/paisajeMarPlaneta.webp" alt="Paisaje de un planeta rodeado de un mar extraterrestre" width="400" height="250">
-        <figcaption>
-            <h3 id="gallery-main-title">Beyond the Stars</h3>
-            <p id="gallery-main-description">Un océano perdido entre las estrellas.</p>
-        </figcaption>
-    </figure>
+<figure class="gallery-featured text-center mx-auto">
+    <img id="gallery-main-image" class="img-fluid" src="assets/img/paisajeMarPlaneta.webp" alt="Paisaje de un planeta rodeado de un mar extraterrestre" width="400" height="250">
+    <figcaption>
+        <h3 id="gallery-main-title">Beyond the Stars</h3>
+        <p id="gallery-main-description">Un océano perdido entre las estrellas.</p>
+    </figcaption>
+</figure>
 
-    <!-- Miniaturas seleccionables -->
-    <div class="gallery-grid">
+<!-- Miniaturas -->
+<div class="row g-4 justify-content-center gallery-grid">
 
-        <figure class="gallery-card">
-            <button type="button" class="gallery-thumbnail" data-image="assets/img/paisajeMarPlaneta.webp" data-alt="Paisaje de un planeta rodeado de un mar extraterrestre" data-title="Beyond the Stars" data-description="Un océano perdido entre las estrellas." aria-label="Mostrar Beyond the Stars" aria-pressed="true">
-                <img src="assets/img/paisajeMarPlaneta.webp" alt="" width="400" height="250" >
+    <div class="col-12 col-md-6 col-lg-4">
+        <figure class="gallery-card h-100">
+            <button type="button" class="gallery-thumbnail w-100" data-image="assets/img/paisajeMarPlaneta.webp" data-alt="Paisaje de un planeta rodeado de un mar extraterrestre" data-title="Beyond the Stars" data-description="Un océano perdido entre las estrellas." aria-label="Mostrar Beyond the Stars" aria-pressed="true">
+                <img class="img-fluid" src="assets/img/paisajeMarPlaneta.webp" alt="" width="400" height="250">
             </button>
             <figcaption>
                 <h3>Beyond the Stars</h3>
@@ -77,10 +79,12 @@
                 Imagen de <a href="https://pixabay.com/">Pixabay</a>.
             </figcaption>
         </figure>
+    </div>
 
-        <figure class="gallery-card">
-            <button type="button" class="gallery-thumbnail" data-image="assets/img/paisajePlaneta.webp" data-alt="Paisaje de un planeta fantástico" data-title="Lost Planet" data-description="Un mundo desconocido en el universo." aria-label="Mostrar Lost Planet" aria-pressed="false">
-                <img src="assets/img/paisajePlaneta.webp" alt="" width="400" height="250">
+    <div class="col-12 col-md-6 col-lg-4">
+        <figure class="gallery-card h-100">
+            <button type="button" class="gallery-thumbnail w-100" data-image="assets/img/paisajePlaneta.webp" data-alt="Paisaje de un planeta fantástico" data-title="Lost Planet" data-description="Un mundo desconocido en el universo." aria-label="Mostrar Lost Planet" aria-pressed="false">
+                <img class="img-fluid" src="assets/img/paisajePlaneta.webp" alt="" width="400" height="250">
             </button>
             <figcaption>
                 <h3>Lost Planet</h3>
@@ -88,28 +92,48 @@
                 Imagen de <a href="https://pixabay.com/">Pixabay</a>.
             </figcaption>
         </figure>
+    </div>
 
-        <figure class="gallery-card">
-            <button type="button"class="gallery-thumbnail" data-image="assets/img/navePlaneta.webp" data-alt="Tercera obra de arte digital de temática espacial" data-title="Unknown Universe" data-description="Una nueva dimensión por descubrir." aria-label="Mostrar Unknown Universe" aria-pressed="false">
-                <img src="assets/img/navePlaneta.webp" alt="" width="400" height="250">
+    <div class="col-12 col-md-6 col-lg-4">
+        <figure class="gallery-card h-100">
+            <button type="button" class="gallery-thumbnail w-100" data-image="assets/img/navePlaneta.webp" data-alt="Tercera obra de arte digital de temática espacial" data-title="Unknown Universe" data-description="Una nueva dimensión por descubrir." aria-label="Mostrar Unknown Universe" aria-pressed="false">
+                <img class="img-fluid" src="assets/img/navePlaneta.webp" alt="" width="400" height="250">
             </button>
             <figcaption>
                 <h3>Unknown Universe</h3>
                 <p>Una nueva dimensión por descubrir.</p>
-                Imagen de <a href="https://pixabay.com/users/willgard-4665627/">Willgard</a> desde <a href="https://pixabay.com/">Pixabay</a>.
+                Imagen de <a href="https://pixabay.com/users/willgard-4665627/">Willgard</a>
+                desde <a href="https://pixabay.com/">Pixabay</a>.
             </figcaption>
         </figure>
-
     </div>
+
+</div>
+
+     
+<!-- Audio -->
+<section class="audio-section">
+    <h2>Escucha el universo</h2>
+    <p>Sumérgete en la experiencia con nuestro ambiente espacial.</p>
+
+    <audio id="nebula-audio" loop preload="metadata">
+        <source src="assets/audio/sonidoPagina.mp3" type="audio/mpeg">
+        Tu navegador no admite la reproducción de audio.
+    </audio>
+
+    <div class="audio-controls">
+        <button type="button" id="audio-toggle" aria-pressed="false">Reproducir audio</button>
+        <button type="button" id="audio-mute" aria-pressed="false">Silenciar </button>
+    </div>
+
+    <p class="audio-credit">
+        Music by
+        <a href="https://pixabay.com/users/atlasaudio-54514918/">AtlasAudio</a>
+        from <a href="https://pixabay.com/">Pixabay</a>.
+        Modificado con <a href="https://editor.audio">Audio Editor</a>.
+    </p>
 </section>
 
-        <!-- Audio -->
-        <section class="audio-section">
-            <h2>Escucha el universo</h2>
-            <p>Sumérgete en la experiencia con nuestro ambiente espacial.</p>
-            <source src="assets/audio/sonidoPagina.mp3" type="audio/mpeg"> Tu navegador no admite la reproducción de audio.
-            <figcaption> Music by <a href="https://pixabay.com/users/atlasaudio-54514918/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=613336">AtlasAudio</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=613336">Pixabay</a> modify for <a href="https://editor.audio">editor audio</a> </figcaption>
-        </section>
         <!-- VÍDEO -->
 <section class="video-section">
     <div class="section-heading">
@@ -129,8 +153,7 @@
             <video id="nebula-video" controls preload="metadata" width="1280" height="720">
                 <source src="assets/video/videoNebula.mp4" type="video/mp4"> Tu navegador no admite la reproducción de vídeo.
             </video>
-
-        </div>
+        </div>    
     </dialog>
 
     <p class="video-credit"> Vídeo de presentación de Nébula. Video by<a href="https://pixabay.com/users/mikkehouse-3374228/">Mikkehouse</a>desde <a href="https://pixabay.com/">Pixabay</a>. </p>

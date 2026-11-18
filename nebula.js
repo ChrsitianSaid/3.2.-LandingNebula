@@ -1,4 +1,3 @@
-
 // 1. GALERÍA DINÁMICA
 
 // Cambia la imagen principal y su información
@@ -37,11 +36,7 @@ function inicializarGaleria() {
 // Inicializa la galería
 inicializarGaleria();
 
-
-/* =====================================
-   2. VENTANA MODAL DEL VÍDEO
-===================================== */
-
+//2. VENTANA MODAL DEL VÍDEO
 // Elementos de la ventana modal
 const modalVideo = document.querySelector("#video-modal");
 const botonAbrirVideo = document.querySelector("#open-video");
@@ -70,6 +65,46 @@ modalVideo.addEventListener("click", (evento) => {
     if (evento.target === modalVideo) {
         cerrarVideo();
     }
+});
+
+// 3. REPRODUCTOR DE AUDIO
+const audio = document.querySelector("#nebula-audio");
+const botonAudio = document.querySelector("#audio-toggle");
+const botonSilencio = document.querySelector("#audio-mute");
+
+// Reproducir y pausar el audio
+botonAudio.addEventListener("click", async () => {
+    if (audio.paused) {
+        try {
+            await audio.play();
+
+            botonAudio.textContent = "Pausar audio";
+            botonAudio.setAttribute("aria-pressed", "true");
+
+        } catch (error) {
+            console.error("No se pudo reproducir el audio:", error);
+        }
+
+    } else {
+        audio.pause();
+
+        botonAudio.textContent = "Reproducir audio";
+        botonAudio.setAttribute("aria-pressed", "false");
+    }
+});
+
+// Silenciar y activar el sonido
+botonSilencio.addEventListener("click", () => {
+    audio.muted = !audio.muted;
+
+    botonSilencio.textContent = audio.muted
+        ? "Activar sonido"
+        : "Silenciar";
+
+    botonSilencio.setAttribute(
+        "aria-pressed",
+        String(audio.muted)
+    );
 });
 
 

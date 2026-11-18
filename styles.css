@@ -1,6 +1,4 @@
-/* =====================================
-   1. VARIABLES Y CONFIGURACIÓN GENERAL
-===================================== */
+/* 1. VARIABLES Y CONFIGURACIÓN GENERAL*/
 
 :root {
     --background: #080B16;
@@ -35,9 +33,7 @@ img {
 }
 
 
-/* =====================================
-   2. HEADER Y NAVEGACIÓN
-===================================== */
+/* 2. HEADER Y NAVEGACIÓN*/
 
 .header {
     display: grid;
@@ -96,9 +92,7 @@ img {
 }
 
 
-/* =====================================
-   3. PRESENTACIÓN PRINCIPAL
-===================================== */
+/* 3. PRESENTACIÓN PRINCIPAL*/
 
 .hero {
     min-height: 650px;
@@ -187,13 +181,13 @@ figure figcaption {
 }
 
 
-/* =====================================
-   4. GALERÍA
-===================================== */
+/* 4. GALERÍA NEÓN*/
 
 .gallery {
-    padding: 100px 7%;
-    background: var(--surface);
+    padding: 90px 5%;
+    background:
+        radial-gradient(ellipse at top, #25113F 0%, transparent 55%),
+        var(--surface);
 }
 
 .section-heading {
@@ -203,40 +197,99 @@ figure figcaption {
 }
 
 .section-heading h2 {
-    font-size: 38px;
+    color: var(--text);
+    font-size: clamp(30px, 4vw, 42px);
     margin: 15px 0;
+    text-shadow: 0 0 15px rgba(185, 103, 255, 0.55);
 }
 
 .section-heading p {
     color: var(--secondary);
 }
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
+/* IMAGEN PRINCIPAL */
 
-.gallery-card {
+.gallery-featured {
+    max-width: 850px;
+    margin: 0 auto 55px;
+    padding: 15px;
+
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 16px;
+
+    box-shadow: 0 0 22px rgba(185, 103, 255, 0.15);
+}
+
+.gallery-featured img {
+    display: block;
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.gallery-featured h3 {
+    color: var(--accent-hover);
+    margin-top: 18px;
+}
+
+.gallery-featured p {
+    color: var(--secondary);
+}
+
+/* TARJETAS DE LAS MINIATURAS */
+
+.gallery-card {
+    height: 100%;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
     overflow: hidden;
 
-    transition: transform 0.3s, border-color 0.3s;
+    box-shadow: 0 0 12px rgba(123, 97, 255, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
 .gallery-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     border-color: var(--accent);
+    box-shadow: 0 0 22px rgba(185, 103, 255, 0.3);
 }
 
-.gallery-card img {
+/* BOTONES DE LAS MINIATURAS */
+
+.gallery-thumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.gallery-thumbnail img {
     display: block;
     width: 100%;
-    height: 250px;
+    height: 230px;
     object-fit: cover;
+
+    transition: transform 0.35s, filter 0.35s;
 }
+
+.gallery-thumbnail:hover img {
+    transform: scale(1.035);
+    filter: brightness(1.12);
+}
+
+.gallery-thumbnail:focus-visible {
+    outline: 3px solid var(--accent-hover);
+    outline-offset: -3px;
+}
+
+/* INFORMACIÓN DE LAS OBRAS */
 
 .gallery-card figcaption {
     padding: 20px;
@@ -244,7 +297,7 @@ figure figcaption {
 }
 
 .gallery-card h3 {
-    color: var(--text);
+    color: var(--accent-hover);
     font-size: 20px;
     margin-bottom: 8px;
 }
@@ -254,10 +307,17 @@ figure figcaption {
     font-size: 14px;
 }
 
+.gallery-card a,
+.video-credit a {
+    color: var(--accent-hover);
+}
 
-/* =====================================
-   5. AUDIO AMBIENTAL
-===================================== */
+.gallery-card a:hover,
+.video-credit a:hover {
+    color: var(--neon-pink);
+}
+
+/* 5. AUDIO AMBIENTAL*/
 
 .audio-section {
     text-align: center;
@@ -279,9 +339,7 @@ figure figcaption {
 }
 
 
-/* =====================================
-   6. VÍDEO
-===================================== */
+/* 6. VÍDEO*/
 
 .video-section {
     padding: 90px 7%;
@@ -304,9 +362,7 @@ figure figcaption {
 }
 
 
-/* =====================================
-   7. FOOTER Y CONTACTO
-===================================== */
+/* 7. FOOTER Y CONTACTO*/
 
 .footer {
     text-align: center;
@@ -365,20 +421,24 @@ figure figcaption {
 }
 
 
-/* =====================================
-   8. ESTADOS DE FOCO
-===================================== */
 
-a:focus-visible {
-    outline: 2px solid var(--accent);
+/*  8. ESTADOS DE FOCO*/
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--accent);
     outline-offset: 5px;
     border-radius: 4px;
 }
 
+/* Mejora la interacción de los botones */
+button {
+    cursor: pointer;
+}
 
-/* =====================================
-   9. DISEÑO RESPONSIVE
-===================================== */
+
+
+/* 9. DISEÑO RESPONSIVE*/
 
 @media (max-width: 850px) {
 
@@ -454,9 +514,7 @@ a:focus-visible {
 }
 
 
-/* =====================================
-   10. PREFERENCIAS DE MOVIMIENTO
-===================================== */
+/* 10. PREFERENCIAS DE MOVIMIENTO*/
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -469,4 +527,139 @@ a:focus-visible {
         animation-iteration-count: 1 !important;
     }
 
+}
+
+
+/* 11. VENTANA MODAL DEL VÍDEO*/
+.video-section {
+    text-align: center;
+}
+
+.video-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 12px 28px;
+
+    background: var(--accent);
+    color: var(--text);
+    border: none;
+    border-radius: 6px;
+
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: background 0.3s, transform 0.3s;
+}
+
+.video-button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-3px);
+    align-items: center;
+    padding: 12px 28px;
+}
+
+.video-modal {
+    width: min(900px, 90%);
+    max-width: none;
+    margin: auto;
+    padding: 20px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.video-modal::backdrop {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.video-modal-content {
+    position: relative;
+}
+
+.video-modal-content video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.close-video {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    z-index: 1;
+
+    width: 44px;
+    height: 44px;
+
+    background: var(--accent);
+    color: var(--text);
+    border: none;
+    border-radius: 50%;
+
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.close-video:hover {
+    background: var(--accent-hover);
+}
+
+.video-credit {
+    margin-top: 20px;
+    color: var(--secondary);
+    font-size: 12px;
+    text-align: center;
+}
+
+
+/*12. IDENTIDAD VISUAL NEÓN*/
+
+.navigation a:hover,
+.navigation a:focus-visible {
+    color: var(--accent-hover);
+    text-shadow: 0 0 10px var(--accent);
+}
+
+.subtitle {
+    color: var(--accent-hover);
+    text-shadow: 0 0 10px rgba(185, 103, 255, 0.5);
+}
+
+.hero-button,
+.video-button {
+    background: linear-gradient(135deg, var(--accent), var(--neon-blue));
+    color: #FFFFFF;
+    border: 1px solid var(--accent-hover);
+    box-shadow: 0 0 14px rgba(185, 103, 255, 0.25);
+}
+
+.hero-button:hover,
+.video-button:hover {
+    background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+    box-shadow: 0 0 22px rgba(240, 91, 255, 0.5);
+}
+
+.close-video {
+    background: var(--accent);
+    box-shadow: 0 0 12px rgba(185, 103, 255, 0.4);
+}
+
+.close-video:hover {
+    background: var(--neon-pink);
+}
+
+.footer-content .email {
+    color: var(--accent-hover);
+    text-shadow: 0 0 10px rgba(185, 103, 255, 0.4);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-hover);
+    outline-offset: 4px;
 }
