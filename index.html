@@ -39,8 +39,16 @@
                 <figcaption> Imagen principal de Nébula. | image by <a href="https://www.pexels.com/es-es/@aymansm/">Aymad Mahmoud </a> </figcaption>
             </figure>
         </section>
+
+        <section id="galeria" class="gallery-intro">
+            <div class="section-heading">
+                <span class="subtitle">COLECCIÓN DIGITAL</span>
+                <h2>Mi universo creativo</h2>
+                <p> Cada obra representa un mundo diferente, creado para explorar los límites de la imaginación.</p>
+            </div>
+
         <!-- GALERÍA ARTÍSTICA -->
-        <section id="galeria" class="gallery">
+
             <div class="section-heading">
                 <span class="subtitle">COLECCIÓN DIGITAL</span>
                 <h2>Mi universo creativo</h2>
@@ -48,28 +56,106 @@
             </div>
             <div class="gallery-grid">
                 <figure class="gallery-card">
-                    <img src="assets/img/paisajeMarPlaneta.webp" alt="Paisaje de un planeta rodeado de un mar extraterrestre"  width="400" height="250" >
+                    <img id="gallery-main-image" src="assets/img/paisajeMarPlaneta.webp" alt="Paisaje de un planeta rodeado de un mar extraterrestre"  width="400" height="250" >
                     <figcaption>
-                        <h3>Beyond the Stars</h3>
-                        <p>Un océano perdido entre las estrellas.</p>| imagen by anonimo from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5570682">Pixabay</a>=paisajeMarPlaneta
+                        <h3 id="gallery-main-title">Beyond the Stars</h3>
+                        <p id="gallery-main-description">Un océano perdido entre las estrellas.</p>| imagen by anonimo from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5570682">Pixabay</a><!--paisajeMarPlaneta-->
                     </figcaption>
                 </figure>
                 <figure class="gallery-card">
-                    <img src="assets/img/paisajePlaneta.webp" alt="Paisaje de un planeta fantástico" width="400px" height="250px" >
+                    <button type="button" class="gallery-button" data-image="assets/img/paisajeMarPlaneta.webp" data-title="Beyond the Stars" data-description="Un océano perdido entre las estrellas.">
+                        <img src="assets/img/paisajeMarPlaneta.webp" alt="Segunda obra de arte digital de temática espacial" width="400px" height="250px">
+                    </button>
                     <figcaption>
                         <h3>Lost Planet</h3>
-                        <p>Un mundo desconocido en el universo.</p>| imagen by anonimo from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5570682">Pixabay</a>=paisaje planeta 
+                        <p>Un mundo desconocido en el universo.</p>| imagen by anonimo from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5570682">Pixabay</a><!--paisaje planeta -->
                     </figcaption>
                 </figure>
                 <figure class="gallery-card">
-                    <img src="assets/img/navePlaneta.webp" alt="Tercera obra de arte digital de temática espacial" width="400px" height="250px " >
+                    <button type="button" class="gallery-button" data-image="assets/img/navePlaneta.webp" data-title="Unknown Universe" data-description="Una nueva dimensión por descubrir.">
+                        <img src="assets/img/navePlaneta.webp" alt="Tercera obra de arte digital de temática espacial" width="400px" height="250px " >
+                    </button>
                     <figcaption>
                         <h3>Unknown Universe</h3>
                         <p>Una nueva dimensión por descubrir.</p>| Image by <a href="https://pixabay.com/users/willgard-4665627/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5570682">Willgard</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5570682">Pixabay</a>
                     </figcaption>
                 </figure>
             </div>
-        </section>
+        
+             <!-- Miniaturas seleccionables -->
+    <div class="gallery-grid">
+
+        <figure class="gallery-card">
+            <button
+                type="button"
+                class="gallery-thumbnail"
+                data-image="assets/img/paisajeMarPlaneta.webp"
+                data-alt="Paisaje de un planeta rodeado de un mar extraterrestre"
+                data-title="Beyond the Stars"
+                data-description="Un océano perdido entre las estrellas."
+                aria-label="Mostrar Beyond the Stars"
+                aria-pressed="true"
+            >
+                <img
+                    src="assets/img/paisajeMarPlaneta.webp"
+                    alt=""
+                    width="400"
+                    height="250"
+                >
+            </button>
+            <figcaption>
+                <h3>Beyond the Stars</h3>
+                <p>Un océano perdido entre las estrellas.</p>
+                Imagen de <a href="https://pixabay.com/">Pixabay</a>.
+            </figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+            <button
+                type="button"
+                class="gallery-thumbnail"
+                data-image="assets/img/paisajePlaneta.webp"
+                data-alt="Paisaje de un planeta fantástico"
+                data-title="Lost Planet"
+                data-description="Un mundo desconocido en el universo."
+                aria-label="Mostrar Lost Planet"
+                aria-pressed="false"
+            >
+                <img
+                    src="assets/img/paisajePlaneta.webp"
+                    alt=""
+                    width="400"
+                    height="250"
+                >
+            </button>
+            <figcaption>
+                <h3>Lost Planet</h3>
+                <p>Un mundo desconocido en el universo.</p>
+                Imagen de <a href="https://pixabay.com/">Pixabay</a>.
+            </figcaption>
+        </figure>
+
+        <figure class="gallery-card">
+            <button
+                type="button"
+                class="gallery-thumbnail"
+                data-image="assets/img/navePlaneta.webp"
+                data-alt="Tercera obra de arte digital de temática espacial"
+                data-title="Unknown Universe"
+                data-description="Una nueva dimensión por descubrir."
+                aria-label="Mostrar Unknown Universe"
+                aria-pressed="false">
+                <img src="assets/img/navePlaneta.webp" alt="" width="400" height="250">
+            </button>
+            <figcaption>
+                <h3>Unknown Universe</h3>
+                <p>Una nueva dimensión por descubrir.</p>
+                Imagen de <a href="https://pixabay.com/users/willgard-4665627/">Willgard</a> desde <a href="https://pixabay.com/">Pixabay</a>.
+            </figcaption>
+        </figure>
+
+    </div>
+</section>
         <!-- Audio -->
         <section class="audio-section">
             <h2>Escucha el universo</h2>
