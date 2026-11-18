@@ -110,22 +110,31 @@
             <source src="assets/audio/sonidoPagina.mp3" type="audio/mpeg"> Tu navegador no admite la reproducción de audio.
             <figcaption> Music by <a href="https://pixabay.com/users/atlasaudio-54514918/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=613336">AtlasAudio</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=613336">Pixabay</a> modify for <a href="https://editor.audio">editor audio</a> </figcaption>
         </section>
-        <!-- Video -->
-        <section class="video-section">
-            <div class="section-heading">
-                <span class="subtitle">EXPERIENCIA AUDIOVISUAL</span>
-                <h2>Más allá de nuestro universo</h2>
-                <p> Descubre una experiencia visual a través de los paisajes y mundos de Nébula.</p>
-            </div>
-            <figure class="video-container">
-                <video controls preload="auto" poster="assets/video/videoNebula.mp4" width="1280" height="720">
-                    <source src="assets/video/videoNebula.mp4" type="video/mp4"> Tu navegador no admite la reproducción de vídeo.
-                </video>
-                <figcaption> Vídeo de presentación de Nébula.
-                  Video by <a href="https://pixabay.com/users/mikkehouse-3374228/?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=64917">Mikkehouse</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=64917">Pixabay</a> modify for <a href="https://online-video-cutter.com/es/projects/a65256db-dae6-44b9-9426-758ee50048f4"> 123APPS</a>
-                </figcaption>
-            </figure>
-        </section>
+        <!-- VÍDEO -->
+<section class="video-section">
+    <div class="section-heading">
+        <span class="subtitle">EXPERIENCIA AUDIOVISUAL</span>
+        <h2>Más allá de nuestro universo</h2>
+        <p> Descubre una experiencia visual a través de los paisajes y mundos de Nébula. </p>
+    </div>
+
+    <button type="button" id="open-video" class="video-button"> Ver vídeo</button>
+
+    <!-- Ventana modal -->
+    <dialog id="video-modal" class="video-modal">
+        <div class="video-modal-content">
+
+            <button type="button" id="close-video" class="close-video" aria-label="Cerrar vídeo"> &times; </button>
+
+            <video id="nebula-video" controls preload="metadata" width="1280" height="720">
+                <source src="assets/video/videoNebula.mp4" type="video/mp4"> Tu navegador no admite la reproducción de vídeo.
+            </video>
+
+        </div>
+    </dialog>
+
+    <p class="video-credit"> Vídeo de presentación de Nébula. Video by<a href="https://pixabay.com/users/mikkehouse-3374228/">Mikkehouse</a>desde <a href="https://pixabay.com/">Pixabay</a>. </p>
+</section>
     </main>
     <!-- PIE DE PÁGINA Y CONTACTO -->
     <footer id="contacto" class="footer">
