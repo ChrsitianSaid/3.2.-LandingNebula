@@ -339,6 +339,55 @@ figure figcaption {
 }
 
 
+/* CONTROLES PERSONALIZADOS DEL AUDIO */
+
+.audio-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.audio-controls button {
+    min-width: 155px;
+    min-height: 44px;
+    padding: 12px 24px;
+
+    background: linear-gradient(
+        135deg,
+        var(--accent),
+        var(--accent-hover)
+    );
+
+    color: var(--text);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 12px rgba(182, 154, 255, 0.2);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        background 0.3s;
+}
+
+.audio-controls button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(182, 154, 255, 0.5);
+    background: var(--accent-hover);
+}
+
+.audio-controls button:active {
+    transform: scale(0.97);
+}
+
 /* 6. VÍDEO*/
 
 .video-section {
